@@ -1,0 +1,17 @@
+<div role="radio-group" aria-label="star rating" class="star-rating">
+    <ng-container *ngFor="let x of [].constructor(stars);let i=index">
+            <span class="span-box" role="radio" tabindex="0"
+
+            [ngStyle]= "{'color':rating() === 1 ? 'red' :  rating() === 2  ? 'goldenrod':   rating() === 3 ? 'orange' :  rating() >=4 ? 'green' : 'goldenrod'}"
+            [attr.aria-checked]="rating() === i+1"
+            (click)="setRating(i+1)"
+            >
+            <!--incase of hover rating add this-->
+            <!-- (mouseenter)="setHover(i+1)"
+            (mouseLeave)="setHover(null)" -->
+
+            {{ displayRating >= i + 1 ? '★' : '☆' }}
+            </span>
+    </ng-container>
+
+</div>
